@@ -4,6 +4,6 @@ code="EXO"
 issuer="GBQBSLLQL2IWYOVNQ6UUFU7G2YROVNRKBY2QTIP6MAMW2FMUKXEW5EXO"
 display_decimals=4
 name="Trusti"
-desc="Tokens for document certification - Trusti lets you easily certify documents, business contracts, or any digital information in the Blockchain."
+desc="Trusti lets you easily certify documents, business contracts, or any digital information in the Blockchain."
 anchor_asset="EXO"
 anchor_asset_type="Token"
