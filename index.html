@@ -23,6 +23,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
   <link href="https://cloudflare-ipfs.com/ipfs/QmQqjyikxg8srMo42QiDSKvfUdVUZrScfjAMsatVM6iBgH/assets/css/argon-dashboard.css?v=1.1.0" rel="stylesheet" />
   <script defer src="https://cloudflare-ipfs.com/ipfs/QmUW2qGrBq67B13wPHxQzMsE69NpPumdnUN41EhpdiaZE7"></script>
+  <!-- Filepond -->
+  <link rel='stylesheet' href='https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css' />
+  <link rel='stylesheet' href='https://unpkg.com/filepond/dist/filepond.min.css' />
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146045693-1"></script>
   <script>
@@ -33,32 +36,20 @@
   </script>
 </head>
 
-<body class="bg-gradient-indigo" onload="init()">
+<body class="bg-gradient-indigo">
   <div class="main-content">
     <header class="header-global mt-2">
     <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
       <div class="container">
         <!-- Brand -->
         <a class="navbar-brand mr-lg-5" href="https://trusti.id"><img src="https://cloudflare-ipfs.com/ipfs/QmNqFqAjZiotijVKva3ThvWfG1ipFqyra1mUc8p7BF2XK7" alt="Trusti"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
 		
-        <ul class="navbar-nav align-items-lg-center ml-lg-auto mr-0">
-			<li class="nav-item dropdown mr-2">
-				<div class="nav-link nav-link-icon" href="#" id="navbar-default_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<span class="btn btn-sm text-sm text-white"><i class="flag-icon flag-icon-us flag-md"></i> EN <i class="fas fa-caret-down ml-1"></i></span>
-				</div>
-				<div class="dropdown-menu" aria-labelledby="navbar-default_dropdown_1" aria-haspopup="true" aria-expanded="false">
-					<a href="#" class="dropdown-item text-dark" data-toggle="modal" data-placement="bottom" onclick="i18next.changeLanguage('id')"><i class="flag-icon flag-icon-id flag-md"></i> Indonesia</a>
-				</div>
-            </li>
+        <ul class="navbar-nav align-items-lg-center ml-lg-auto mt-2 mr-7">
 			<li class="nav-item mr-4">
-              <a href="#" class="btn btn-primary text-white text-uppercase" role="button" aria-pressed="true" data-toggle="tooltip" title="Launch Soon">Manage Asset</a>
+              <a href="#" class="btn btn-outline-white text-uppercase" role="button" aria-pressed="true" data-toggle="tooltip" title="Launch Soon">Login</a>
               </a>
-            </li>
           </ul>
-		  -->
+		  
       </div>
     </nav>
   </header>
@@ -72,32 +63,18 @@
 			<p class="lead text-white">Trusti lets you easily certify documents, business contracts, or any digital information in the Blockchain.</p>
 			<p class="lead text-white"><b>Proof</b> is the <b>evidence</b> establishing a <b>fact</b> or the <b>truth</b> of a statement. You own the data and control the processes — <b>we create the proofs</b>.</p>
         </div>
-        <div class="col-lg-3 text-lg-left ml-4">
+		<div class="col-lg-5 text-lg-left ml-6">
           <div class="card shadow bg-gradient-secondary">
 		  <div class="card-header shadow">
-		  <h2 class="text-indigo text-center">Stamp</h2>
-		  <p class="text-center text-sm text-dark">This serves as a timestamped proof that a document existed at a certain time.</p>
-		  </div>
-            <div class="card-body" id="StampFileFunction">
-				<form class="FileForm" id="StampFileForm" enctype="multipart/form-data">
-					<input class="mb-4 mt-4" onclick="FileOnChange(0)" type="file" name="sampleFile" id="userFile"/>
-					<p class="FileAreaText text-sm"></p>
-					<button id="upload" onclick="StampUserFile()" type="button" class="btn bg-gradient-indigo btn-round btn-block btn-lg text-white mb-2" data-toggle="modal" data-target="#result" data-backdrop="static" aria-pressed="true" data-toggle="tooltip" title="under development" disabled>Stamp</button>
-				</form>
-            </div>
-          </div>
-        </div>
-		<div class="col-lg-3 text-lg-left ml-4">
-          <div class="card shadow bg-gradient-secondary">
-		  <div class="card-header shadow">
-		  <h2 class="text-indigo text-center">Verify</h2>
-		  <p class="text-center text-sm text-dark">You can verify a document’s integrity by comparing a cryptographic hash.</p>
+		  <h2 class="text-indigo text-center">Verify your data on the blockchain</h2>
+		  <p class="text-center text-sm text-dark">You must use the exact same data file that has been certified</p>
 		  </div>
             <div class="card-body" id="CheckStampFunction">
-				<form class="FileForm" id="CheckStampForm">
-				  <input class="mb-4 mt-4" onclick="FileOnChange(1)" type="file" id="sampleFile"/>
-				  <p class="FileAreaText text-sm"></p>
-				  <button id="upload" onclick="CheckFile()" type="button" class="btn bg-gradient-indigo btn-round btn-block btn-lg text-white mb-2" data-toggle="modal" data-target="#result" data-backdrop="static" aria-pressed="true" data-toggle="tooltip" title="under development" disabled>Verify</button>
+				<form class="" id="">
+				  <div class="form-group">
+					<input type="file" class="filepond" name="" data-max-file-size="1MB" data-max-files="1" required>
+				  </div>
+				  <button id="" type="button" class="btn bg-gradient-indigo btn-round btn-block btn-lg text-white mb-2" data-toggle="modal" data-target="#result" data-backdrop="static" disabled>Verify - Under Development</button>
 				</form>
             </div>		  
           </div>
@@ -106,23 +83,42 @@
     </div>
 	<!--- Check Result -->
 	<div class="modal fade" id="result" tabindex="-1" role="dialog" aria-labelledby="result" aria-hidden="true">
-		<div class="modal-dialog modal-default modal-dialog-centered modal-" role="document">
-			<div class="modal-content bg-dark">
+		<div class="modal-dialog modal-secondary modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content bg-secondary modal">
 				
-				<div class="modal-body">
-					<div class="text-white" id="snackbar">Please wait...</div>
-					<div class="py-0 text-center ShowResult mt-4" id="ShowResult1">
-						<p id="response1"></p>
+				<div class="card-header bg-white border-0">
+				  <div class="row align-items-center">
+					<div class="col-12">
+					  <h3 class="mb-0 text-primary">Blockchain Receipt</h3>
 					</div>
-					<div class="py-0 text-center ShowResult mt-4" id="ShowResult3">
-						<p id="response3"></p>
-					</div>					
+				  </div>
 				</div>
 				
-				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal" onClick="refreshPage()">Close</button>
+				<div class="card-body bg-secondary small">
+					<div class="row">
+						<div class="col-md-12">
+							<dl class="row">
+								<dt class="col-sm-3">Credential</dt>
+								<dd class="col-sm-9"><b>e-Certificate Kartika Lestari</b></dd>
+								<dt class="col-sm-3">SHA-256 Fingerprint</dt>
+								<dd class="col-sm-9 text-uppercase">A162CD2983008600F0303F23199B92702823D6D162BC1C27241E86A42F10CF22</dd>
+								<div class="my-4"></div>
+								<dt class="col-sm-3">Fulfillment </dt>
+								<dd class="col-sm-9 text-uppercase">bd5290bc-a87a-4bd4-bbfa-3bf36eaaf6ce</dd>
+								<dt class="col-sm-3">Block Number</dt>
+								<dd class="col-sm-9 text-uppercase">21815566</dd>
+								<dt class="col-sm-3">TX Hash</dt>
+								<dd class="col-sm-9 text-uppercase">86ceb95ff65cd5a50cab0ec957c9cb4a3fef02ed76c23f905a272bac5c72cc73</dd>
+								<dt class="col-sm-3">Issued</dt>
+								<dd class="col-sm-9">2 Nov 2019, 6:46PM GMT</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="text-right mt-2 mb-3">
+						<button type="button" class="btn btn-link" data-dismiss="modal" onClick="refreshPage()">Close</button>
+						<a href="https://explorer.vexanium.com/transaction/86ceb95ff65cd5a50cab0ec957c9cb4a3fef02ed76c23f905a272bac5c72cc73" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" target="_blank">Explorer</a>
+					</div>
 				</div>
-				
 			</div>
 		</div>
 	</div>
@@ -132,10 +128,54 @@
   <script src="https://cloudflare-ipfs.com/ipfs/QmQqjyikxg8srMo42QiDSKvfUdVUZrScfjAMsatVM6iBgH/assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cloudflare-ipfs.com/ipfs/QmQqjyikxg8srMo42QiDSKvfUdVUZrScfjAMsatVM6iBgH/assets/js/argon-dashboard.min.js?v=1.1.0"></script>
   <script src="https://cloudflare-ipfs.com/ipfs/QmeFS1LmMibDSCPcUhez7WBbezVfPy6cvNjr28RN6iEf6R"></script>
+  <!-- File Upload -->
+  <script src='https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.min.js'></script>
+  <script src='https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.min.js'></script>
+  <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+  <script src='https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.min.js'></script>
+  <script src="https://unpkg.com/filepond-plugin-image-crop/dist/filepond-plugin-image-crop.js"></script>
+  <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+  <script src="https://unpkg.com/filepond-plugin-image-transform/dist/filepond-plugin-image-transform.js"></script>
+  <script src='https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js'></script>
+  <script src='https://unpkg.com/filepond/dist/filepond.min.js'></script>
+  <script>
+	  // register desired plugins...
+	  FilePond.registerPlugin(
+	// encodes the file as base64 data...
+	   FilePondPluginFileEncode,
+	// validates the size of the file...
+	   FilePondPluginFileValidateSize,
+	   
+	   // validates the file type...
+	   FilePondPluginFileValidateType,
+	// corrects mobile image orientation...
+	   FilePondPluginImageExifOrientation,
+	   
+	   // calculates & dds cropping info based on the input image dimensions and the set crop ratio
+	   FilePondPluginImageCrop,
+	   
+	   //  calculates & adds resize information
+	   FilePondPluginImageResize,
+	   
+	   // applies the image modifications supplied by the Image crop and Image resize plugins before the image is uploaded
+	   FilePondPluginImageTransform,
+	// previews dropped images...
+	   FilePondPluginImagePreview
+	);
+	// Select the file input and use create() to turn it into a pond
+	  FilePond.create( document.querySelector('.filepond'), { 
+	   
+	   allowImagePreview: false,
+	   allowMultiple: false,
+	   allowFileEncode: false,
+	   required: true
+	   
+	  });
+  </script>
   <script>
 	function refreshPage(){
 		window.location.reload();
 	} 
-	</script>
+  </script>
 </body>
 </html>
